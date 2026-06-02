@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EventOS — Cursor Berlin Hackathon</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+  <div class="bg-glow glow-3"></div>
+  <div class="bg-noise"></div>
+
+  <!-- Progress -->
+  <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">▸</span>
+      <span class="brand-name">EventOS</span>
+    </div>
+    <div class="topbar-meta">
+      <span class="pill">Cursor Berlin · Builders Night</span>
+      <span class="counter"><span id="slideNum">01</span> / <span id="slideTotal">10</span></span>
+    </div>
+  </header>
+
+  <!-- Deck -->
+  <main class="deck" id="deck">
+
+    <!-- 1. TITLE -->
+    <section class="slide is-active" data-slide>
+      <div class="slide-inner center">
+        <div class="kicker reveal">An email-first multi-agent system</div>
+        <h1 class="title-xl reveal">
+          <span class="grad">EventOS</span>
+        </h1>
+        <p class="lede reveal">From <strong>10,000 events</strong> to <strong>one great night.</strong><br/>Your personal event concierge — that learns what you actually like.</p>
+        <div class="team-row reveal">
+          <a class="team-card" href="https://malts.me/" target="_blank" rel="noopener">
+            <span class="team-name">Malte Janßen</span>
+            <span class="team-role">Web Dev &amp; Infra</span>
+          </a>
+          <a class="team-card" href="https://luisrieke.com/" target="_blank" rel="noopener">
+            <span class="team-name">Luis Rieke</span>
+            <span class="team-role">Product</span>
+          </a>
+          <a class="team-card" href="https://www.linkedin.com/in/-raghav/" target="_blank" rel="noopener">
+            <span class="team-name">Raghav Gupta</span>
+            <span class="team-role">Engineering</span>
+          </a>
+        </div>
+        <div class="title-foot reveal">Antler Berlin · Dienstag, 2. Juni 2026 · 18:00–22:00</div>
+      </div>
+    </section>
+
+    <!-- 2. PROBLEM -->
+    <section class="slide" data-slide>
+      <div class="slide-inner">
+        <div class="eyebrow">The problem</div>
+        <h2 class="title-lg">Great events are everywhere.<br/><span class="muted">Finding the right one is impossible.</span></h2>
+        <div class="grid-3">
+          <div class="card stat-card">
+            <div class="stat-num">10,000+</div>
+            <div class="stat-label">events scattered across Luma, Meetup, Eventbrite, LinkedIn &amp; Slack</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-num">5 tabs</div>
+            <div class="stat-label">of FOMO every week — and you still pick wrong</div>
+          </div>
+          <div class="card stat-card">
+            <div class="stat-num">0</div>
+            <div class="stat-label">tools that actually know <em>you</em> and what's worth your evening</div>
+          </div>
+        </div>
+        <p class="callout">Discovery is a feed problem. We treat it as a <strong>decision</strong> problem.</p>
+      </div>
+    </section>
+
+    <!-- 3. SOLUTION -->
+    <section class="slide" data-slide>
+      <div class="slide-inner">
+        <div class="eyebrow">The solution</div>
+        <h2 class="title-lg">Just send an email.</h2>
+        <div class="email-demo">
+          <div class="mail mail-out reveal-up">
+            <div class="mail-head"><span class="dot"></span> You → EventOS</div>
+            <div class="mail-body">“I'm a Product Manager, I like AI and Cursor.<br/>What's the best event for me in Berlin tonight?”</div>
+          </div>
+          <div class="mail-arrow">↓</div>
+          <div class="mail mail-in reveal-up">
+            <div class="mail-head"><span class="dot dot-green"></span> EventOS → You</div>
+            <div class="mail-body">
+              You should go to <strong>“Cursor Hackathon meets Builders Night Berlin.”</strong>
+              <span class="roi-chip">Expected ROI 9.4/10</span>
+            </div>
+          </div>
+        </div>
+        <p class="callout">No app. No feed. No doom-scroll. <strong>One inbox, one perfect answer.</strong></p>
+      </div>
+    </section>
+
+    <!-- 4. ARCHITECTURE -->
+    <section class="slide" data-slide>
+      <div class="slide-inner">
+        <div class="eyebrow">Under the hood</div>
+        <h2 class="title-lg">Five agents, one recommendation.</h2>
+        <div class="agents">
+          <div class="agent-node" style="--i:0">
+            <div class="agent-ico">👤</div>
+            <div class="agent-name">Profile Agent</div>
+            <div class="agent-desc">Learns from your feedback &amp; builds a living taste profile.</div>
+          </div>
+          <div class="agent-link">→</div>
+          <div class="agent-node" style="--i:1">
+            <div class="agent-ico">🗓️</div>
+            <div class="agent-name">Event Agent</div>
+            <div class="agent-desc">Crawls &amp; scores events: speakers, crowd, topic, venue, quality.</div>
+          </div>
+          <div class="agent-link">→</div>
+          <div class="agent-node" style="--i:2">
+            <div class="agent-ico">⚖️</div>
+            <div class="agent-name">Matching Agent</div>
+            <div class="agent-desc">Computes networking, learning &amp; career ROI vs. your profile.</div>
+          </div>
+          <div class="agent-link">→</div>
+          <div class="agent-node" style="--i:3">
+            <div class="agent-ico">🎯</div>
+            <div class="agent-name">Recommendation Agent</div>
+            <div class="agent-desc">Picks exactly one event — and explains why.</div>
+          </div>
+          <div class="agent-link">→</div>
+          <div class="agent-node" style="--i:4">
+            <div class="agent-ico">🧠</div>
+            <div class="agent-name">Memory Agent</div>
+            <div class="agent-desc">Asks for feedback afterwards &amp; gets smarter every time.</div>
+          </div>
+        </div>
+        <p class="callout">A loop, not a pipeline — every recommendation feeds the next.</p>
+      </div>
+    </section>
+
+    <!-- 5. THE RECOMMENDATION -->
+    <section class="slide" data-slide>
+      <div class="slide-inner">
+        <div class="eyebrow">The output</div>
+        <h2 class="title-lg">Not a list. A decision — with reasons.</h2>
+        <div class="rec-card reveal-up">
+          <div class="rec-top">
+            <div>
+              <div class="rec-label">Tonight's pick</div>
+              <div class="rec-title">Cursor Hackathon meets Builders Night Berlin</div>
+            </div>
+            <div class="roi-dial">
+              <div class="roi-value">9.4</div>
+              <div class="roi-sub">ROI / 10</div>
+            </div>
+          </div>
+          <ul class="rec-reasons">
+            <li>You care about AI-assisted development — and you use Cursor.</li>
+            <li>High density of technical builders, founders &amp; product leads on site.</li>
+            <li>Florian Martens (Cursor Engineer) on how the Cursor team uses Cursor.</li>
+            <li>Free, curated room — 50–70 attendees, hand-picked from 400+ applicants.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. LEARNING LOOP -->
+    <section class="slide" data-slide>
+      <div class="slide-inner">
+        <div class="eyebrow">The moat</div>
+        <h2 class="title-lg">It gets better every time you reply.</h2>
+        <div class="loop-demo">
+          <div class="mail mail-in">
+            <div class="mail-head"><span class="dot dot-green"></span> EventOS</div>
+            <div class="mail-body">How was the event?</div>
+          </div>
+          <div class="mail mail-out">
+            <div class="mail-head"><span class="dot"></span> You</div>
+            <div class="mail-body">Loved it. Pizza was great. 🍕</div>
+          </div>
+          <div class="learn-box">
+            <div class="learn-title">New preferences saved</div>
+            <div class="tags">
+              <span class="tag">likes technical hackathons</span>
+              <span class="tag">likes builder communities</span>
+              <span class="tag">positive on events with food</span>
+            </div>
+          </div>
+        </div>
+        <p class="callout">Every reply is training data. The longer you use it, the harder it is to leave.</p>
+      </div>
+    </section>
+
+    <!-- 7. WHY EMAIL -->
+    <section class="slide" data-slide>
+      <div class="slide-inner">
+        <div class="eyebrow">Why email-first</div>
+        <h2 class="title-lg">The interface everyone already has.</h2>
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-ico">📥</div>
+            <h3>Zero install</h3>
+            <p>No download, no signup flow. Forward an invite or just write a sentence.</p>
+          </div>
+          <div class="card">
+            <div class="card-ico">💬</div>
+            <h3>Conversational</h3>
+            <p>Natural language in, a human-readable recommendation out. Feedback closes the loop.</p>
+          </div>
+          <div class="card">
+            <div class="card-ico">🤝</div>
+            <h3>Built for sharing</h3>
+            <p>CC a friend, forward to your team. Distribution is baked into the medium.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. WHY WE WIN -->
+    <section class="slide" data-slide>
+      <div class="slide-inner">
+        <div class="eyebrow">Why we win</div>
+        <h2 class="title-lg">Messy event data → one event worth attending.</h2>
+        <div class="grid-2">
+          <div class="card win-card">
+            <div class="card-ico">🧩</div>
+            <h3>Multi-agent, not multi-prompt</h3>
+            <p>Specialized agents collaborate — profile, discovery, scoring, decision, memory. Each does one thing well.</p>
+          </div>
+          <div class="card win-card">
+            <div class="card-ico">📈</div>
+            <h3>Decision over discovery</h3>
+            <p>Everyone builds feeds. We deliver a single, defensible answer with an ROI you can argue with.</p>
+          </div>
+          <div class="card win-card">
+            <div class="card-ico">🔁</div>
+            <h3>Compounding personalization</h3>
+            <p>The memory loop turns one-shot search into a relationship that improves with every reply.</p>
+          </div>
+          <div class="card win-card">
+            <div class="card-ico">⚡</div>
+            <h3>Built tonight, in Cursor</h3>
+            <p>End-to-end working demo — exactly the kind of "design → code → shipped" Cursor enables.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. TEAM -->
+    <section class="slide" data-slide>
+      <div class="slide-inner center">
+        <div class="eyebrow">Team EventOS</div>
+        <h2 class="title-lg">Builders who ship.</h2>
+        <div class="team-row big">
+          <a class="team-card big" href="https://malts.me/" target="_blank" rel="noopener">
+            <div class="avatar">MJ</div>
+            <span class="team-name">Malte Janßen</span>
+            <span class="team-role">Web developer · cloud &amp; infra · Google Cloud Hackathon winner</span>
+          </a>
+          <a class="team-card big" href="https://luisrieke.com/" target="_blank" rel="noopener">
+            <div class="avatar">LR</div>
+            <span class="team-name">Luis Rieke</span>
+            <span class="team-role">Senior PM @ Finanzguru · 4.8★ apps · growth &amp; product</span>
+          </a>
+          <a class="team-card big" href="https://www.linkedin.com/in/-raghav/" target="_blank" rel="noopener">
+            <div class="avatar">RG</div>
+            <span class="team-name">Raghav Gupta</span>
+            <span class="team-role">Engineering · agents &amp; systems</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. CLOSING -->
+    <section class="slide" data-slide>
+      <div class="slide-inner center">
+        <div class="kicker reveal">EventOS</div>
+        <h2 class="title-xl"><span class="grad">One inbox.</span><br/>One perfect night.</h2>
+        <p class="lede">An email-first multi-agent system that learns your interests, analyzes thousands of events, and recommends the single highest-ROI event for you.</p>
+        <div class="cta-row">
+          <div class="cta-mail">hi@eventos.ai</div>
+        </div>
+        <div class="title-foot">Thank you — let's build. 🚀</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <button class="nav-btn" id="prevBtn" aria-label="Previous slide">‹</button>
+    <div class="dots" id="dots"></div>
+    <button class="nav-btn" id="nextBtn" aria-label="Next slide">›</button>
+  </nav>
+
+  <div class="hint" id="hint">Use ← → / Space · press <kbd>F</kbd> for fullscreen</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
