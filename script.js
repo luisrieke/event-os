@@ -73,6 +73,13 @@
     }
   });
 
+  // Click navigation: left half → prev, right half → next
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('a, button, .nav, .dots, kbd')) return;
+    if (e.clientX < window.innerWidth * 0.5) prev();
+    else next();
+  });
+
   // Wheel / trackpad navigation (debounced)
   let wheelLock = false;
   window.addEventListener('wheel', (e) => {

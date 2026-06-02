@@ -176,6 +176,12 @@ html, body {
 .card-ico { font-size: 30px; margin-bottom: 16px; }
 .card h3 { font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
 .card p { font-size: 15px; color: var(--ink-soft); line-height: 1.55; }
+a.card { display: block; text-decoration: none; color: inherit; }
+a.card:hover { border-color: var(--accent); }
+.link-url {
+  margin-top: 12px; font-family: 'JetBrains Mono', monospace;
+  font-size: 12.5px; color: var(--accent); word-break: break-all;
+}
 
 .stat-card { text-align: left; }
 .stat-num {
@@ -267,6 +273,11 @@ html, body {
 .tag:nth-child(2) { animation-delay: 0.25s; }
 .tag:nth-child(3) { animation-delay: 0.4s; }
 @keyframes tagIn { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: none; } }
+
+/* ====== Closing slide (compact, no scroll) ====== */
+.closing .kicker { margin-bottom: 14px; }
+.closing .title-xl { font-size: clamp(44px, 8vw, 92px); margin-bottom: 18px; }
+.closing .lede { font-size: clamp(16px, 1.8vw, 20px); margin-bottom: 24px; }
 
 /* ====== Closing CTA ====== */
 .cta-row { margin: 8px 0 28px; }
